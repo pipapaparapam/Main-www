@@ -64,6 +64,15 @@
         margin-bottom: 1.5rem !important;
       }
 
+      .status-wave {
+        gap: 0.22rem !important;
+      }
+
+      .status-wave span {
+        width: 0.36rem !important;
+        height: 0.36rem !important;
+      }
+
       .grid {
         grid-template-columns: 1fr !important;
       }
@@ -187,9 +196,14 @@
           </h1>
 
           <h2
-            class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-8"
+            class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-8 flex items-center justify-center gap-2 lg:justify-start"
             style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.2rem, 4.2vw, 4rem);">
-            hang tight...
+            <span>hang tight</span>
+            <span class="status-wave flex items-end gap-1" aria-label="loading">
+              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 0ms;"></span>
+              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 120ms;"></span>
+              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 240ms;"></span>
+            </span>
           </h2>
 
           <div class="grid grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0" id="countdown" aria-live="polite">
@@ -240,7 +254,7 @@
             </button>
           </div>
 
-          <form id="notifyForm" class="mt-5 space-y-3">
+          <form id="notifyForm" class="mt-5 space-y-3" action="https://formspree.io/f/mzezazea" method="POST">
             <label class="block text-left text-xs uppercase tracking-[0.2em] text-slate-400" for="email">Get notified</label>
             <input
               id="email"
@@ -253,6 +267,7 @@
             <button type="submit" class="w-full rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-400/15">
               Notify me
             </button>
+            <p id="formStatus" class="hidden text-sm text-emerald-300"></p>
           </form>
         </div>
 
@@ -322,19 +337,42 @@
     setInterval(updateCountdown, 1000);
 
     const notifyForm = document.getElementById('notifyForm');
+    const formStatus = document.getElementById('formStatus');
+
     notifyForm.addEventListener('submit', function (event) {
       event.preventDefault();
+
       const emailInput = document.getElementById('email');
-      const email = encodeURIComponent(emailInput.value.trim());
+      const email = emailInput.value.trim();
 
       if (!email) {
         emailInput.focus();
         return;
       }
 
-      const subject = encodeURIComponent('CourtRhythm early access request');
-      const body = encodeURIComponent('Hi CourtRhythm team,\n\nI would like to be notified when the app launches.\nEmail: ' + emailInput.value.trim() + '\n');
-      window.location.href = 'mailto:bemzeurope@gmail.com?subject=' + subject + '&body=' + body;
+      const formData = new FormData(notifyForm);
+
+      fetch(notifyForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          formStatus.textContent = 'Thanks! We will keep you posted.';
+          formStatus.classList.remove('hidden');
+          notifyForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(function () {
+        formStatus.textContent = 'Something went wrong. Please try again later.';
+        formStatus.classList.remove('hidden');
+        formStatus.classList.add('text-red-300');
+      });
     });
 
     const warmupGame = document.getElementById('warmupGame');
