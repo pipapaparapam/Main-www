@@ -3,73 +3,209 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CourtRhythm is the new way to bring energy, rhythm, and fun to your basketball warm-up. Join the launch and get notified.">
-  <meta name="theme-color" content="#0b1326">
+  <title>CourtRhythm | Coming Soon</title>
+  <meta name="description" content="CourtRhythm is building a premium sports experience for players and fans. Get notified when the app launches.">
+  <meta name="keywords" content="CourtRhythm, sports app, court booking, performance tracking, training, athlete community">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.courtrhythm.com/">
+  <meta name="theme-color" content="#0b1326">
+  <meta property="og:title" content="CourtRhythm | Coming Soon">
+  <meta property="og:description" content="Premium sports experiences built for players and fans. Join the launch list for CourtRhythm.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.courtrhythm.com/">
-  <meta property="og:title" content="CourtRhythm — Coming Soon">
-  <meta property="og:description" content="A smarter, more engaging basketball warm-up is on the way. Join the CourtRhythm launch.">
-  <meta property="og:site_name" content="CourtRhythm">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CourtRhythm — Coming Soon">
-  <meta name="twitter:description" content="A smarter, more engaging basketball warm-up is on the way. Join the CourtRhythm launch.">
-  <title>CourtRhythm — The Future of Basketball Warm-Ups</title>
+  <meta property="og:image" content="https://www.courtrhythm.com/og-image.jpg">
+  <link rel="canonical" href="https://www.courtrhythm.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    html, body { margin: 0; padding: 0; }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      background: #0b1326;
+      background:
+        radial-gradient(circle at top left, rgba(16, 185, 129, 0.16), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(59, 130, 246, 0.1), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 30%),
+        #0b1326;
       color: #dae2fd;
       font-family: Inter, sans-serif;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       overflow-x: hidden;
-      background-image: radial-gradient(circle at 15% 15%, rgba(52, 211, 153, .08), transparent 30%), radial-gradient(circle at 85% 85%, rgba(6, 182, 212, .07), transparent 28%);
     }
 
-    ::-webkit-scrollbar { display: none; }
-
-    #countdown > div {
-      background: linear-gradient(145deg, rgba(30, 41, 59, .72), rgba(15, 23, 42, .5));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 32px rgba(15,23,42,.5);
-      transition: transform .2s ease, border-color .2s ease;
+    ::-webkit-scrollbar {
+      display: none;
     }
 
-    #countdown > div:hover { transform: translateY(-3px); border-color: rgba(52, 211, 153, .55); }
-    .status-wave { transform: translateY(.12em); }
+    main {
+      flex: 1;
+    }
+
+    #countdown > div > div:first-child {
+      font-size: clamp(1.75rem, 1.8vw + 1.1rem, 2.9rem);
+    }
+
+    .status-wave {
+      display: inline-flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 0.18rem;
+      margin-left: 0.1rem;
+      transform: translateY(0.7rem);
+      line-height: 0;
+    }
+
+    .status-wave span {
+      width: 0.38rem;
+      height: 0.38rem;
+      display: block;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.95);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .status-wave span:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .status-wave span:nth-child(3) {
+      animation-delay: 0.24s;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: translateY(0.12rem) scale(0.9);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes border-scan {
+      0% {
+        transform: rotate(0deg);
+        opacity: 0.45;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(360deg);
+        opacity: 0.45;
+      }
+    }
 
     @media (max-width: 640px) {
-      main { min-height: auto; justify-content: flex-start !important; align-items: flex-start !important; padding-top: .9rem !important; padding-bottom: 5rem !important; }
-      .mb-10 { margin-bottom: 2.25rem !important; }
-      .mt-16 { margin-top: 2.25rem !important; }
-      h1, h2 { letter-spacing: -.05em; max-width: 100%; margin-left: auto; margin-right: auto; }
-      h1 { font-size: clamp(1.55rem, 7vw, 2.2rem) !important; }
-      h2 { font-size: clamp(1.65rem, 7.5vw, 2.35rem) !important; margin-bottom: 1.5rem !important; }
-      .status-wave { gap: .22rem !important; transform: translateY(.2em); }
-      .status-wave span { width: .36rem !important; height: .36rem !important; }
-      .grid, .lg\:grid-cols-\[1\.15fr_0\.85fr\] { grid-template-columns: 1fr !important; }
-      .max-w-xl { max-width: 100% !important; }
-      .rounded-\[2rem\] { border-radius: 1.5rem !important; }
-      #countdown { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: .5rem !important; }
-      #countdown > div { padding: .65rem .4rem !important; }
-      #countdown > div > div:first-child { font-size: 1.4rem !important; }
-      #countdown > div > div:last-child { letter-spacing: .14em !important; font-size: .52rem !important; }
-      footer { position: static !important; height: auto !important; padding: 1rem 1.25rem 1.5rem !important; }
+      main {
+        min-height: auto;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding-top: 0.8rem !important;
+        padding-bottom: 4.5rem !important;
+      }
+
+      .mb-10 {
+        margin-bottom: 1.75rem !important;
+      }
+
+      .mt-16 {
+        margin-top: 2.25rem !important;
+      }
+
+      h1,
+      h2 {
+        letter-spacing: -0.06em;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        font-size: clamp(1.3rem, 5vw, 1.9rem) !important;
+      }
+
+      h2 {
+        font-size: clamp(1.25rem, 4.4vw, 1.8rem) !important;
+        margin-bottom: 1.4rem !important;
+      }
+
+      .status-wave {
+        transform: translateY(0.5rem);
+        gap: 0.16rem !important;
+        margin-left: 0.08rem !important;
+      }
+
+      .status-wave span {
+        width: 0.28rem !important;
+        height: 0.28rem !important;
+      }
+
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .lg\:grid-cols-\[1\.15fr_0\.85fr\] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .max-w-xl {
+        max-width: 100% !important;
+      }
+
+      .rounded-\[2rem\] {
+        border-radius: 1.5rem !important;
+      }
+
+      #countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 0.5rem !important;
+      }
+
+      #countdown > div {
+        padding: 0.67rem 0.36rem !important;
+      }
+
+      #countdown > div > div:first-child {
+        font-size: 1.75rem !important;
+      }
+
+      #countdown > div > div:last-child {
+        letter-spacing: 0.16em !important;
+        font-size: 0.5rem !important;
+      }
+
+      footer {
+        position: static !important;
+        height: auto !important;
+        padding: 1rem 1.25rem 1.5rem !important;
+        margin-top: 1rem !important;
+      }
     }
 
     @media (max-width: 390px) {
-      main { padding-top: .6rem !important; }
-      .mb-10 { margin-bottom: 1.8rem !important; }
-      h1, h2 { max-width: 100%; }
-      h1 { font-size: 1.5rem !important; }
-      h2 { font-size: 1.6rem !important; }
+      main {
+        padding-top: 0.5rem !important;
+      }
+
+      .mb-10 {
+        margin-bottom: 1.5rem !important;
+      }
+
+      h1,
+      h2 {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -83,88 +219,296 @@
   <main class="relative min-h-screen flex items-center justify-center px-6 py-8">
     <div class="w-full max-w-6xl">
       <div class="flex items-center justify-center gap-3 mb-10">
-        <div class="rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-300 shadow-[0_0_35px_rgba(78,222,163,0.3)] flex items-center justify-center p-2" style="width: clamp(3rem, 8vw, 5rem); height: clamp(3rem, 8vw, 5rem);" aria-label="CourtRhythm logo">
-          <svg class="w-full h-full" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+        <div
+          class="rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-300 flex items-center justify-center p-2"
+          style="width: clamp(3rem, 8vw, 5rem); height: clamp(3rem, 8vw, 5rem); box-shadow: 0 0 28px rgba(52,211,153,0.6), 0 0 52px rgba(16,185,129,0.15), inset 0 0 14px rgba(255,255,255,0.25); filter: saturate(1.18);">
+          <svg class="w-full h-full" fill="none" viewBox="0 0 48 48">
             <circle cx="32" cy="14" r="4.5" fill="#ec6a06"></circle>
             <path d="M7 24.5H14L19 14.5L25.5 33.5L31.5 21L35.5 25.5H41" stroke="#003824" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </div>
+
         <div class="flex items-baseline tracking-tight">
           <span class="font-extrabold text-white" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem);">Court</span>
-          <span class="font-black text-emerald-400 ml-1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem);">Rhythm</span>
+          <span class="font-black text-emerald-400 ml-1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); text-shadow: 0 0 18px rgba(52,211,153,0.42);">Rhythm</span>
         </div>
       </div>
 
       <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] items-center">
         <div class="text-center lg:text-left">
-          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-emerald-300">New app release</div>
-          <h1 class="font-extrabold leading-[0.95] text-white mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.1rem, 4vw, 3.6rem);">We are coming soon</h1>
-          <h2 class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-8 flex items-center justify-center gap-2 lg:justify-start" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.2rem, 4.2vw, 4rem);">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            New app release
+          </div>
+
+          <h1 class="font-extrabold leading-[0.95] text-white mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 3.8vw, 3.3rem); letter-spacing: -0.06em; text-shadow: 0 0 24px rgba(148,163,184,0.12);">
+            We are coming soon
+          </h1>
+
+          <h2 class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-8 flex items-center justify-center gap-2 lg:justify-start" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 3.9vw, 3.8rem); letter-spacing: -0.06em;">
             <span>hang tight</span>
-            <span class="status-wave flex items-end gap-1" aria-label="loading">
-              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 0ms;"></span>
-              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 120ms;"></span>
-              <span class="block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" style="animation-delay: 240ms;"></span>
+            <span class="status-wave" aria-label="loading">
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
           </h2>
 
-          <div class="grid grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0" id="countdown" aria-label="Launch countdown" aria-live="polite">
-            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4"><div class="text-3xl sm:text-4xl font-black text-white" id="days">00</div><div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Days</div></div>
-            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4"><div class="text-3xl sm:text-4xl font-black text-white" id="hours">00</div><div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Hours</div></div>
-            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4"><div class="text-3xl sm:text-4xl font-black text-white" id="minutes">00</div><div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Mins</div></div>
-            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4"><div class="text-3xl sm:text-4xl font-black text-white" id="seconds">00</div><div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Secs</div></div>
+          <div class="grid grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0" id="countdown" aria-live="polite">
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="days">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Days</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="hours">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Hours</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="minutes">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Mins</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="seconds">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Secs</div>
+            </div>
           </div>
         </div>
 
-        <div class="rounded-[2rem] border border-slate-700/80 bg-slate-900/60 p-5 shadow-[0_30px_80px_rgba(2,6,23,0.7)] backdrop-blur-md">
-          <div class="mb-4 flex items-center justify-between"><div class="text-sm uppercase tracking-[0.25em] text-slate-400">Warm-up</div><div class="flex gap-2"><span class="h-3 w-3 rounded-full bg-emerald-400"></span><span class="h-3 w-3 rounded-full bg-yellow-400"></span><span class="h-3 w-3 rounded-full bg-red-400"></span></div></div>
-          <div class="rounded-2xl border border-slate-700 bg-slate-800/80 p-4"><div class="text-center text-xs uppercase tracking-[0.22em] text-slate-400 mb-3">Game QR</div><img class="mx-auto block rounded-xl border border-slate-700 bg-white p-2" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.courtrhythm.com%2F%3Fwarmup%3D1" alt="CourtRhythm warmup game QR code" width="220" height="220"></div>
-          <div class="mt-5 rounded-2xl border border-slate-700/80 bg-slate-950/60 p-4"><div class="mb-2 text-sm text-slate-300">Activate your warm-up</div><button id="playWarmup" type="button" class="w-full rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-3 font-semibold text-slate-950 transition hover:brightness-110">Play quick game</button></div>
-          <form id="notifyForm" class="mt-5 space-y-3" action="https://formspree.io/f/mzezazea" method="POST"><label class="block text-left text-xs uppercase tracking-[0.2em] text-slate-400" for="email">Get notified</label><input id="email" type="email" name="email" placeholder="your@email.com" class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-3 text-sm text-white placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none" required><button type="submit" class="w-full rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-400/15">Notify me</button><p id="formStatus" class="hidden text-sm text-emerald-300"></p></form>
+        <div class="relative rounded-[2rem] border border-slate-700/80 bg-slate-900/60 p-5 shadow-[0_30px_80px_rgba(2,6,23,0.7)] backdrop-blur-md overflow-hidden transition-all duration-300 hover:-translate-y-0.5" style="box-shadow: 0 26px 64px rgba(2,6,23,0.7), 0 0 0 1px rgba(16,185,129,0.12), 0 0 26px rgba(52,211,153,0.08);">
+          <div class="pointer-events-none absolute inset-0 rounded-[2rem]">
+            <div class="absolute inset-0 rounded-[2rem] border border-emerald-400/30"></div>
+            <div class="absolute inset-[1px] rounded-[calc(2rem-1px)] bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.08),_rgba(15,23,42,0.02)_55%,_transparent_70%)]"></div>
+            <div class="absolute inset-0 rounded-[2rem]" style="background: conic-gradient(from 0deg, rgba(52,211,153,0), rgba(52,211,153,0.18), rgba(52,211,153,0.8), rgba(52,211,153,0.18), rgba(52,211,153,0), rgba(52,211,153,0)); animation: border-scan 4.5s linear infinite; mask: radial-gradient(farthest-side, transparent calc(100% - 13px), black calc(100% - 12px)); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 13px), black calc(100% - 12px)); opacity: 0.95; filter: drop-shadow(0 0 8px rgba(52,211,153,0.45));"></div>
+          </div>
+
+          <div class="relative z-10">
+            <div class="mb-4 flex items-center justify-between">
+              <div class="text-sm uppercase tracking-[0.25em] text-slate-400">Warm-up</div>
+              <div class="flex gap-2">
+                <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+                <span class="h-3 w-3 rounded-full bg-red-400"></span>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-700 bg-slate-800/80 p-4">
+              <div class="text-center text-xs uppercase tracking-[0.22em] text-slate-400 mb-3">Game QR</div>
+              <img
+                class="mx-auto block rounded-xl border border-slate-700 bg-white p-2"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.courtrhythm.com%2F%3Fwarmup%3D1"
+                alt="CourtRhythm warmup game QR code"
+                width="220"
+                height="220"
+              >
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-slate-700/80 bg-slate-950/60 p-4">
+              <div class="mb-2 text-sm text-slate-300">Activate your warm-up</div>
+              <button id="playWarmup" type="button" class="w-full rounded-xl bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 px-4 py-3 font-semibold text-slate-950 transition hover:brightness-110 shadow-[0_0_18px_rgba(52,211,153,0.3)]">
+                Play quick game
+              </button>
+            </div>
+
+            <form id="notifyForm" class="mt-5 space-y-3" action="https://formspree.io/f/mzezazea" method="POST">
+              <label class="block text-left text-xs uppercase tracking-[0.2em] text-slate-400" for="email">Get notified</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-3 text-sm text-white placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none"
+                required
+              >
+              <button type="submit" class="w-full rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-400/15 shadow-[0_0_18px_rgba(52,211,153,0.12)]">
+                Notify me
+              </button>
+              <p id="formStatus" class="hidden text-sm text-emerald-300"></p>
+            </form>
+          </div>
         </div>
       </div>
 
-      <div id="warmupGame" class="hidden mt-10 mx-auto max-w-xl rounded-[2rem] border border-emerald-400/30 bg-slate-900/60 p-5 text-center shadow-[0_20px_60px_rgba(16,185,129,0.12)]"><div class="text-xs uppercase tracking-[0.28em] text-emerald-300">Warmup challenge</div><div class="mt-3 text-2xl font-black text-white">Penalty shootout</div><div class="mt-2 text-sm text-slate-300">Tap the button as many times as you can before the timer ends.</div><div class="mt-5 flex items-center justify-center gap-4 text-sm text-slate-300"><div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Score: <span id="scoreValue" class="font-bold text-emerald-300">0</span></div><div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Time: <span id="timerValue" class="font-bold text-cyan-300">10</span>s</div></div><button id="shootBtn" type="button" class="mt-6 w-full rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-3 text-lg font-bold text-slate-950 transition hover:brightness-110">Shoot!</button></div>
+      <div id="warmupGame" class="hidden mt-10 mx-auto max-w-xl rounded-[2rem] border border-emerald-400/30 bg-slate-900/60 p-5 text-center shadow-[0_20px_60px_rgba(16,185,129,0.12)]">
+        <div class="text-xs uppercase tracking-[0.28em] text-emerald-300">Warmup challenge</div>
+        <div class="mt-3 text-2xl font-black text-white">Precision strike</div>
+        <div class="mt-2 text-sm text-slate-300">Hit the moving target before time runs out.</div>
+
+        <div class="mt-5 flex items-center justify-center gap-4 text-sm text-slate-300">
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Score: <span id="scoreValue" class="font-bold text-emerald-300">0</span></div>
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Time: <span id="timerValue" class="font-bold text-cyan-300">12</span>s</div>
+        </div>
+
+        <div id="arena" class="relative mt-6 h-52 w-full overflow-hidden rounded-2xl border border-slate-700 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.16),_rgba(15,23,42,0.85)_55%)]">
+          <div id="target" class="absolute flex items-center justify-center rounded-full border-2 border-emerald-200 bg-gradient-to-br from-emerald-300 via-emerald-400 to-cyan-400 text-slate-950 shadow-[0_0_30px_rgba(52,211,153,0.45)] cursor-pointer select-none transition-transform duration-100 ease-out" style="width: 60px; height: 60px; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(1);">
+            <span class="text-lg font-black">+</span>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
-  <footer class="fixed bottom-0 left-0 right-0 h-16 flex items-center px-6"><span class="text-xs text-slate-500">© 2026 CourtRhythm. All rights reserved.</span></footer>
+  <footer class="h-16 flex items-center px-6 mt-auto">
+    <span class="text-xs text-slate-500">© 2026 CourtRhythm. All rights reserved.</span>
+  </footer>
 
   <script>
     const targetDate = new Date('2026-10-31T00:00:00');
-    const countdownNodes = { days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds') };
+    const countdownNodes = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
     function updateCountdown() {
-      const distance = targetDate - new Date();
-      if (distance <= 0) { Object.values(countdownNodes).forEach(node => node.textContent = '00'); return; }
-      countdownNodes.days.textContent = String(Math.floor(distance / 86400000)).padStart(2, '0');
-      countdownNodes.hours.textContent = String(Math.floor(distance / 3600000) % 24).padStart(2, '0');
-      countdownNodes.minutes.textContent = String(Math.floor(distance / 60000) % 60).padStart(2, '0');
-      countdownNodes.seconds.textContent = String(Math.floor(distance / 1000) % 60).padStart(2, '0');
+      const now = new Date();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownNodes.days.textContent = '00';
+        countdownNodes.hours.textContent = '00';
+        countdownNodes.minutes.textContent = '00';
+        countdownNodes.seconds.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdownNodes.days.textContent = String(days).padStart(2, '0');
+      countdownNodes.hours.textContent = String(hours).padStart(2, '0');
+      countdownNodes.minutes.textContent = String(minutes).padStart(2, '0');
+      countdownNodes.seconds.textContent = String(seconds).padStart(2, '0');
     }
-    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     const notifyForm = document.getElementById('notifyForm');
     const formStatus = document.getElementById('formStatus');
+
     notifyForm.addEventListener('submit', function (event) {
       event.preventDefault();
+
       const emailInput = document.getElementById('email');
-      if (!emailInput.value.trim()) { emailInput.focus(); return; }
-      fetch(notifyForm.action, { method: 'POST', body: new FormData(notifyForm), headers: { Accept: 'application/json' } })
-        .then(response => { if (!response.ok) throw new Error('Form submission failed'); formStatus.textContent = 'Thanks! We will keep you posted.'; formStatus.classList.remove('hidden'); notifyForm.reset(); })
-        .catch(() => { formStatus.textContent = 'Something went wrong. Please try again later.'; formStatus.classList.remove('hidden'); formStatus.classList.add('text-red-300'); });
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        emailInput.focus();
+        return;
+      }
+
+      const formData = new FormData(notifyForm);
+
+      fetch(notifyForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          formStatus.textContent = 'Thanks! We will keep you posted.';
+          formStatus.classList.remove('hidden');
+          notifyForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(function () {
+        formStatus.textContent = 'Something went wrong. Please try again later.';
+        formStatus.classList.remove('hidden');
+        formStatus.classList.add('text-red-300');
+      });
     });
 
     const warmupGame = document.getElementById('warmupGame');
     const playWarmup = document.getElementById('playWarmup');
-    const shootBtn = document.getElementById('shootBtn');
     const scoreValue = document.getElementById('scoreValue');
     const timerValue = document.getElementById('timerValue');
-    let score = 0, timeLeft = 10, timerId = null, warmupActive = false;
-    function resetWarmup() { score = 0; timeLeft = 10; scoreValue.textContent = '0'; timerValue.textContent = '10'; warmupActive = false; clearInterval(timerId); shootBtn.disabled = false; shootBtn.textContent = 'Shoot!'; }
-    function startWarmup() { resetWarmup(); warmupGame.classList.remove('hidden'); warmupActive = true; timerId = setInterval(function () { timeLeft -= 1; timerValue.textContent = String(Math.max(0, timeLeft)); if (timeLeft <= 0) { clearInterval(timerId); warmupActive = false; shootBtn.disabled = true; shootBtn.textContent = 'Challenge complete'; } }, 1000); }
+    const target = document.getElementById('target');
+    const arena = document.getElementById('arena');
+
+    let score = 0;
+    let timeLeft = 12;
+    let timerId = null;
+    let spawnId = null;
+    let warmupActive = false;
+
+    function moveTarget() {
+      if (!warmupActive || !arena) return;
+
+      const arenaRect = arena.getBoundingClientRect();
+      const targetSize = target.offsetWidth;
+      const maxX = Math.max(0, arenaRect.width - targetSize);
+      const maxY = Math.max(0, arenaRect.height - targetSize);
+
+      const nextX = Math.random() * maxX;
+      const nextY = Math.random() * maxY;
+
+      target.style.left = nextX + 'px';
+      target.style.top = nextY + 'px';
+      target.style.transform = 'translate(0, 0) scale(1)';
+    }
+
+    function resetWarmup() {
+      score = 0;
+      timeLeft = 12;
+      scoreValue.textContent = '0';
+      timerValue.textContent = '12';
+      warmupActive = false;
+      clearInterval(timerId);
+      clearInterval(spawnId);
+      if (target) {
+        target.style.display = 'flex';
+        target.style.transform = 'translate(0, 0) scale(1)';
+      }
+    }
+
+    function startWarmup() {
+      resetWarmup();
+      warmupGame.classList.remove('hidden');
+      warmupActive = true;
+      moveTarget();
+
+      spawnId = setInterval(function () {
+        if (warmupActive) {
+          moveTarget();
+        }
+      }, 900);
+
+      timerId = setInterval(function () {
+        timeLeft -= 1;
+        timerValue.textContent = String(Math.max(0, timeLeft));
+
+        if (timeLeft <= 0) {
+          clearInterval(timerId);
+          clearInterval(spawnId);
+          warmupActive = false;
+          target.style.display = 'none';
+        }
+      }, 1000);
+    }
+
     playWarmup.addEventListener('click', startWarmup);
-    shootBtn.addEventListener('click', function () { if (!warmupActive) return; score += 1; scoreValue.textContent = String(score); shootBtn.textContent = score % 2 === 0 ? 'Goal!' : 'Nice!'; setTimeout(() => { shootBtn.textContent = 'Shoot!'; }, 220); });
-    if (new URLSearchParams(window.location.search).get('warmup') === '1') startWarmup();
+
+    target.addEventListener('pointerdown', function () {
+      if (!warmupActive) return;
+      score += 1;
+      scoreValue.textContent = String(score);
+      target.style.transform = 'scale(0.85)';
+      setTimeout(function () {
+        target.style.transform = 'scale(1)';
+      }, 120);
+      moveTarget();
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('warmup') === '1') {
+      startWarmup();
+    }
   </script>
 </body>
 </html>
