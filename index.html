@@ -36,11 +36,11 @@
         justify-content: flex-start !important;
         align-items: flex-start !important;
         padding-top: 0.9rem !important;
-        padding-bottom: 4rem !important;
+        padding-bottom: 5rem !important;
       }
 
       .mb-10 {
-        margin-bottom: 2.75rem !important;
+        margin-bottom: 2.25rem !important;
       }
 
       .mt-16 {
@@ -49,10 +49,19 @@
 
       h1,
       h2 {
-        letter-spacing: -0.06em;
-        max-width: 11ch;
+        letter-spacing: -0.05em;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+        margin-bottom: 1.5rem !important;
       }
 
       .grid {
@@ -70,6 +79,30 @@
       .rounded-\[2rem\] {
         border-radius: 1.5rem !important;
       }
+
+      #countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 0.5rem !important;
+      }
+
+      #countdown > div {
+        padding: 0.65rem 0.4rem !important;
+      }
+
+      #countdown > div > div:first-child {
+        font-size: 1.2rem !important;
+      }
+
+      #countdown > div > div:last-child {
+        letter-spacing: 0.14em !important;
+        font-size: 0.52rem !important;
+      }
+
+      footer {
+        position: static !important;
+        height: auto !important;
+        padding: 1rem 1.25rem 1.5rem !important;
+      }
     }
 
     @media (max-width: 390px) {
@@ -78,12 +111,12 @@
       }
 
       .mb-10 {
-        margin-bottom: 2.25rem !important;
+        margin-bottom: 1.8rem !important;
       }
 
       h1,
       h2 {
-        max-width: 10ch;
+        max-width: 100%;
       }
     }
   </style>
