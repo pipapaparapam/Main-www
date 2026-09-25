@@ -54,6 +54,59 @@
       font-size: clamp(1.75rem, 1.8vw + 1.1rem, 2.9rem);
     }
 
+    .logo-mark {
+      position: relative;
+      overflow: visible;
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      inset: -10% -12%;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.55) 0%, rgba(52, 211, 153, 0.2) 28%, transparent 68%);
+      opacity: 0.9;
+      transform: scaleX(1.1);
+      animation: logo-beam 2.1s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 14% 18%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.56) 20%, rgba(52,211,153,0.3) 50%, transparent 80%);
+      transform: scaleX(0.9);
+      opacity: 0.9;
+      animation: logo-sweep 2.1s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes logo-beam {
+      0%, 100% {
+        transform: scaleX(0.88) scaleY(0.9);
+        opacity: 0.55;
+      }
+      50% {
+        transform: scaleX(1.12) scaleY(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes logo-sweep {
+      0%, 100% {
+        transform: translateX(-10%) scaleX(0.8);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translateX(10%) scaleX(1.05);
+        opacity: 0.75;
+      }
+    }
+
     .status-wave {
       display: inline-flex;
       align-items: flex-end;
@@ -220,9 +273,9 @@
     <div class="w-full max-w-6xl">
       <div class="flex items-center justify-center gap-3 mb-10">
         <div
-          class="rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-300 flex items-center justify-center p-2"
-          style="width: clamp(3rem, 8vw, 5rem); height: clamp(3rem, 8vw, 5rem); box-shadow: 0 0 28px rgba(52,211,153,0.6), 0 0 52px rgba(16,185,129,0.15), inset 0 0 14px rgba(255,255,255,0.25); filter: saturate(1.18);">
-          <svg class="w-full h-full" fill="none" viewBox="0 0 48 48">
+          class="logo-mark rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-300 flex items-center justify-center p-2"
+          style="width: clamp(3rem, 8vw, 5rem); height: clamp(3rem, 8vw, 5rem); box-shadow: 0 0 18px rgba(52,211,153,0.4), 0 0 36px rgba(16,185,129,0.12), inset 0 0 14px rgba(255,255,255,0.25); filter: saturate(1.18);">
+          <svg class="relative z-10 w-full h-full" fill="none" viewBox="0 0 48 48">
             <circle cx="32" cy="14" r="4.5" fill="#ec6a06"></circle>
             <path d="M7 24.5H14L19 14.5L25.5 33.5L31.5 21L35.5 25.5H41" stroke="#003824" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -230,7 +283,7 @@
 
         <div class="flex items-baseline tracking-tight">
           <span class="font-extrabold text-white" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem);">Court</span>
-          <span class="font-black text-emerald-400 ml-1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); text-shadow: 0 0 18px rgba(52,211,153,0.42);">Rhythm</span>
+          <span class="font-black text-emerald-400 ml-1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); text-shadow: 0 0 8px rgba(52,211,153,0.22);">Rhythm</span>
         </div>
       </div>
 
