@@ -40,7 +40,7 @@
       }
 
       .mb-10 {
-        margin-bottom: 3.25rem !important;
+        margin-bottom: 2.75rem !important;
       }
 
       .mt-16 {
@@ -54,6 +54,22 @@
         margin-left: auto;
         margin-right: auto;
       }
+
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .lg\:grid-cols-\[1\.15fr_0\.85fr\] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .max-w-xl {
+        max-width: 100% !important;
+      }
+
+      .rounded-\[2rem\] {
+        border-radius: 1.5rem !important;
+      }
     }
 
     @media (max-width: 390px) {
@@ -62,7 +78,7 @@
       }
 
       .mb-10 {
-        margin-bottom: 2.75rem !important;
+        margin-bottom: 2.25rem !important;
       }
 
       h1,
@@ -81,9 +97,9 @@
     <div class="absolute -bottom-[20%] -right-[10%] w-[45vw] h-[45vw] rounded-full bg-orange-500/5 blur-[120px]"></div>
   </div>
 
-  <main class="relative min-h-screen flex items-center justify-center px-6">
+  <main class="relative min-h-screen flex items-center justify-center px-6 py-8">
 
-    <div class="text-center max-w-5xl">
+    <div class="w-full max-w-6xl">
 
       <!-- Logo -->
       <div class="flex items-center justify-center gap-3 mb-10">
@@ -124,31 +140,104 @@
 
       </div>
 
-      <!-- Headline -->
-      <h1
-        class="font-extrabold leading-tight mb-2"
-        style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem);">
-        We are coming soon
-      </h1>
+      <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] items-center">
 
-      <h2
-        class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent"
-        style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem);">
-        hang tight...
-      </h2>
+        <div class="text-center lg:text-left">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            New app release
+          </div>
 
-      <!-- Status Badge -->
-      <div class="mt-16 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/70 backdrop-blur-md">
+          <h1
+            class="font-extrabold leading-[0.95] text-white mb-3"
+            style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.1rem, 4vw, 3.6rem);">
+            We are coming soon
+          </h1>
 
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-        </span>
+          <h2
+            class="font-extrabold bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500 bg-clip-text text-transparent mb-8"
+            style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.2rem, 4.2vw, 4rem);">
+            hang tight...
+          </h2>
 
-        <span class="text-xs tracking-[0.2em] uppercase text-slate-400 font-mono">
-          STADIUM_UPLINK // STANDBY
-        </span>
+          <div class="grid grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0" id="countdown" aria-live="polite">
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="days">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Days</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="hours">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Hours</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="minutes">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Mins</div>
+            </div>
+            <div class="rounded-2xl border border-slate-700/80 bg-slate-900/50 px-3 py-4 shadow-[0_12px_32px_rgba(15,23,42,0.5)]">
+              <div class="text-3xl sm:text-4xl font-black text-white" id="seconds">00</div>
+              <div class="mt-2 text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">Secs</div>
+            </div>
+          </div>
+        </div>
 
+        <div class="rounded-[2rem] border border-slate-700/80 bg-slate-900/60 p-5 shadow-[0_30px_80px_rgba(2,6,23,0.7)] backdrop-blur-md">
+          <div class="mb-4 flex items-center justify-between">
+            <div class="text-sm uppercase tracking-[0.25em] text-slate-400">Warm-up</div>
+            <div class="flex gap-2">
+              <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+              <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+              <span class="h-3 w-3 rounded-full bg-red-400"></span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-700 bg-slate-800/80 p-4">
+            <div class="text-center text-xs uppercase tracking-[0.22em] text-slate-400 mb-3">Game QR</div>
+            <img
+              class="mx-auto block rounded-xl border border-slate-700 bg-white p-2"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.courtrhythm.com%2F%3Fwarmup%3D1"
+              alt="CourtRhythm warmup game QR code"
+              width="220"
+              height="220"
+            >
+          </div>
+
+          <div class="mt-5 rounded-2xl border border-slate-700/80 bg-slate-950/60 p-4">
+            <div class="mb-2 text-sm text-slate-300">Activate your warm-up</div>
+            <button id="playWarmup" type="button" class="w-full rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-3 font-semibold text-slate-950 transition hover:brightness-110">
+              Play quick game
+            </button>
+          </div>
+
+          <form id="notifyForm" class="mt-5 space-y-3">
+            <label class="block text-left text-xs uppercase tracking-[0.2em] text-slate-400" for="email">Get notified</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-3 text-sm text-white placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none"
+              required
+            >
+            <button type="submit" class="w-full rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-400/15">
+              Notify me
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div id="warmupGame" class="hidden mt-10 mx-auto max-w-xl rounded-[2rem] border border-emerald-400/30 bg-slate-900/60 p-5 text-center shadow-[0_20px_60px_rgba(16,185,129,0.12)]">
+        <div class="text-xs uppercase tracking-[0.28em] text-emerald-300">Warmup challenge</div>
+        <div class="mt-3 text-2xl font-black text-white">Penalty shootout</div>
+        <div class="mt-2 text-sm text-slate-300">Tap the button as many times as you can before the timer ends.</div>
+
+        <div class="mt-5 flex items-center justify-center gap-4 text-sm text-slate-300">
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Score: <span id="scoreValue" class="font-bold text-emerald-300">0</span></div>
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-2">Time: <span id="timerValue" class="font-bold text-cyan-300">10</span>s</div>
+        </div>
+
+        <button id="shootBtn" type="button" class="mt-6 w-full rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-3 text-lg font-bold text-slate-950 transition hover:brightness-110">
+          Shoot!
+        </button>
       </div>
 
     </div>
@@ -163,6 +252,112 @@
     </span>
 
   </footer>
+
+  <script>
+    const targetDate = new Date('2026-10-31T00:00:00');
+    const countdownNodes = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    function updateCountdown() {
+      const now = new Date();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownNodes.days.textContent = '00';
+        countdownNodes.hours.textContent = '00';
+        countdownNodes.minutes.textContent = '00';
+        countdownNodes.seconds.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdownNodes.days.textContent = String(days).padStart(2, '0');
+      countdownNodes.hours.textContent = String(hours).padStart(2, '0');
+      countdownNodes.minutes.textContent = String(minutes).padStart(2, '0');
+      countdownNodes.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const notifyForm = document.getElementById('notifyForm');
+    notifyForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('email');
+      const email = encodeURIComponent(emailInput.value.trim());
+
+      if (!email) {
+        emailInput.focus();
+        return;
+      }
+
+      const subject = encodeURIComponent('CourtRhythm early access request');
+      const body = encodeURIComponent('Hi CourtRhythm team,\n\nI would like to be notified when the app launches.\nEmail: ' + emailInput.value.trim() + '\n');
+      window.location.href = 'mailto:bemzeurope@gmail.com?subject=' + subject + '&body=' + body;
+    });
+
+    const warmupGame = document.getElementById('warmupGame');
+    const playWarmup = document.getElementById('playWarmup');
+    const shootBtn = document.getElementById('shootBtn');
+    const scoreValue = document.getElementById('scoreValue');
+    const timerValue = document.getElementById('timerValue');
+
+    let score = 0;
+    let timeLeft = 10;
+    let timerId = null;
+    let warmupActive = false;
+
+    function resetWarmup() {
+      score = 0;
+      timeLeft = 10;
+      scoreValue.textContent = '0';
+      timerValue.textContent = '10';
+      warmupActive = false;
+      clearInterval(timerId);
+      shootBtn.disabled = false;
+    }
+
+    function startWarmup() {
+      resetWarmup();
+      warmupGame.classList.remove('hidden');
+      warmupActive = true;
+      timerId = setInterval(function () {
+        timeLeft -= 1;
+        timerValue.textContent = String(Math.max(0, timeLeft));
+
+        if (timeLeft <= 0) {
+          clearInterval(timerId);
+          warmupActive = false;
+          shootBtn.disabled = true;
+          shootBtn.textContent = 'Challenge complete';
+        }
+      }, 1000);
+    }
+
+    playWarmup.addEventListener('click', startWarmup);
+    shootBtn.addEventListener('click', function () {
+      if (!warmupActive) return;
+      score += 1;
+      scoreValue.textContent = String(score);
+      shootBtn.textContent = score % 2 === 0 ? 'Goal!' : 'Nice!';
+      setTimeout(function () {
+        shootBtn.textContent = 'Shoot!';
+      }, 220);
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('warmup') === '1') {
+      startWarmup();
+    }
+  </script>
 
 </body>
 </html>
