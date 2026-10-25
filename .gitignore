@@ -1,0 +1,4 @@
+backups/
+*.zip
+*.log
+.DS_Store

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.courtrhythm.com/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/pl/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/privacy.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/polityka-prywatnosci.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/pl/polityka-prywatnosci.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/polityka-prywatnosci.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/terms.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/regulamin.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/pl/regulamin.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/regulamin.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/delete-account.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/delete-account.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/usun-konto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/delete-account.html"/>
+  </url>
+  <url>
+    <loc>https://www.courtrhythm.com/pl/usun-konto.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.courtrhythm.com/delete-account.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.courtrhythm.com/pl/usun-konto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.courtrhythm.com/delete-account.html"/>
+  </url>
+</urlset>

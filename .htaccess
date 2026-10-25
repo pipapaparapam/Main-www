@@ -1,0 +1,35 @@
+# For OVH (Apache) hosting only. GitHub Pages ignores this file.
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# Force HTTPS and the www host
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.courtrhythm.com%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "DENY"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain application/manifest+json
+</IfModule>
+
+AddType application/manifest+json .webmanifest
+AddType font/woff2 .woff2
