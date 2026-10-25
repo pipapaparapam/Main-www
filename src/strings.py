@@ -132,7 +132,7 @@ EN = {
     "cd_title": "Countdown to launch",
     "cd_d": "days", "cd_h": "hours", "cd_m": "minutes", "cd_s": "seconds",
     "scan_t": "Open this page on your phone",
-    "scan_p": "Scan the code with your phone's camera.",
+    "scan_p": "",
     "qr_alt": "QR code linking to courtrhythm.com",
 
 
@@ -298,7 +298,7 @@ PL = {
     "cd_title": "Odliczanie do startu",
     "cd_d": "dni", "cd_h": "godz.", "cd_m": "min", "cd_s": "sek.",
     "scan_t": "Otwórz tę stronę w telefonie",
-    "scan_p": "Zeskanuj kod aparatem telefonu.",
+    "scan_p": "",
     "qr_alt": "Kod QR z linkiem do courtrhythm.com/pl",
 
 
