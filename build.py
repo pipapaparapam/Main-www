@@ -387,19 +387,48 @@ def home(t, lang):
 
 <section class="section" id="partners" aria-labelledby="part-title">
   <div class="wrap">
-    <div class="partner">
-      <div>
-        <h2 id="part-title">{t['part_h2']}</h2>
-        <p>{t['part_p']}</p>
-        <div class="cta-row"><a class="btn btn-primary" href="mailto:{EMAIL}?subject={subj}">{t['part_cta']}</a></div>
-      </div>
-      <ul>
-        <li>{t['part_l1']}</li>
-        <li>{t['part_l2']}</li>
-        <li>{t['part_l3']}</li>
-        <li>{t['part_l4']}</li>
-      </ul>
+    <div class="section-head partner-head">
+      <h2 id="part-title">{t['part_h2']}</h2>
+      <p>{t['part_p']}</p>
     </div>
+    <div class="partner-showcase">
+      <p class="partner-showcase-intro">{t['sponsor_intro']}</p>
+      <div class="sponsor-grid" aria-label="{t['sponsor_title']}">
+        <article class="sponsor-card">
+          <div class="sponsor-mark" aria-hidden="true">M</div>
+          <div class="sponsor-copy">
+            <span class="sponsor-label">{t['sponsor_1_label']}</span>
+            <h3>{t['sponsor_1_title']}</h3>
+            <p>{t['sponsor_1_text']}</p>
+          </div>
+        </article>
+        <article class="sponsor-card">
+          <div class="sponsor-mark" aria-hidden="true">S</div>
+          <div class="sponsor-copy">
+            <span class="sponsor-label">{t['sponsor_2_label']}</span>
+            <h3>{t['sponsor_2_title']}</h3>
+            <p>{t['sponsor_2_text']}</p>
+          </div>
+        </article>
+        <article class="sponsor-card">
+          <div class="sponsor-mark" aria-hidden="true">G</div>
+          <div class="sponsor-copy">
+            <span class="sponsor-label">{t['sponsor_3_label']}</span>
+            <h3>{t['sponsor_3_title']}</h3>
+            <p>{t['sponsor_3_text']}</p>
+          </div>
+        </article>
+        <article class="sponsor-card">
+          <div class="sponsor-mark" aria-hidden="true">C</div>
+          <div class="sponsor-copy">
+            <span class="sponsor-label">{t['sponsor_4_label']}</span>
+            <h3>{t['sponsor_4_title']}</h3>
+            <p>{t['sponsor_4_text']}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cta-row partner-cta"><a class="btn btn-primary" href="mailto:{EMAIL}?subject={subj}">{t['part_cta']}</a></div>
   </div>
 </section>
 
